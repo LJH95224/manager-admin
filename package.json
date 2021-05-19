@@ -2,6 +2,7 @@
   "name": "manager-admin",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ljh95224.github.io/manager-admin/",
   "scripts": {
     "dev": "vue-cli-service serve",
     "serve": "vue-cli-service serve",

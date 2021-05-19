@@ -2,10 +2,10 @@
  * @Description: router 路由配置文件
  * @Autor: Alfred
  * @Date: 2021-05-18 15:12:21
- * @LastEditTime: 2021-05-19 16:27:51
+ * @LastEditTime: 2021-05-19 23:22:02
  * @FilePath: \manager-admin\src\router\index.ts
  */
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Layout from '@/layout/index.vue'
 
 export const routes: RouteRecordRaw[] = [
@@ -39,7 +39,7 @@ export const routes: RouteRecordRaw[] = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes
 })
 

@@ -2,7 +2,7 @@
  * @Description: vue 配置
  * @Autor: Alfred
  * @Date: 2021-05-18 14:43:46
- * @LastEditTime: 2021-05-19 18:40:39
+ * @LastEditTime: 2021-05-19 22:26:00
  * @FilePath: \manager-admin\vue.config.ts
  */
 const path = require('path')

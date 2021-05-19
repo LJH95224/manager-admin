@@ -12,14 +12,15 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "allowJs": true,
     "types": [
       "webpack-env",
       "jest"
     ],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"],
+      "utils/*": ["src/utils/*"],
+      "styles/*": ["src/styles/*"],
     },
     "lib": [
       "esnext",
@@ -33,7 +34,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "typed-css.d.ts"
   ],
   "exclude": [
     "node_modules"

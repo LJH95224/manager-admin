@@ -1,19 +1,40 @@
+/*
+ * @Description: router 路由配置文件
+ * @Autor: Alfred
+ * @Date: 2021-05-18 15:12:21
+ * @LastEditTime: 2021-05-19 16:27:51
+ * @FilePath: \manager-admin\src\router\index.ts
+ */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
+import Layout from '@/layout/index.vue'
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/home',
+    name: 'home',
+    component: Layout,
+    meta: { title: '导航', icon: 'el-icon-s-home' },
+    children: [
+      {
+        path: 'home',
+        name: 'Home',
+        meta: { title: '首页', icon: 'el-icon-s-home', alwaysShow: true },
+        component: () => import('@/views/Home.vue')
+      }
+    ]
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/users',
+    component: Layout,
+    meta: { title: '用户管理', icon: 'el-icon-user-solid', alwaysShow: true },
+    children: [
+      {
+        path: 'list',
+        meta: { title: '用户列表', icon: 'el-icon-user-solid' },
+        component: () => import('@/views/About.vue')
+      }
+    ]
   }
 ]
 

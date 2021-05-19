@@ -2,7 +2,7 @@
  * @Description: vue 配置
  * @Autor: Alfred
  * @Date: 2021-05-18 14:43:46
- * @LastEditTime: 2021-05-19 22:59:21
+ * @LastEditTime: 2021-05-19 23:04:49
  * @FilePath: \manager-admin\vue.config.ts
  */
 const path = require('path')
@@ -14,7 +14,7 @@ function resolve(dir) {
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/manager-admin/' : '/',
   outputDir: 'dist',
-  assetsPublicPath: '/',
+  assetsPublicPath: './',
   productionSourceMap: false,
   configureWebpack: {
     resolve: {

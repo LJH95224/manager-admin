@@ -2,7 +2,7 @@
  * @Description: router 路由配置文件
  * @Autor: Alfred
  * @Date: 2021-05-18 15:12:21
- * @LastEditTime: 2021-05-19 23:22:02
+ * @LastEditTime: 2021-05-20 09:39:14
  * @FilePath: \manager-admin\src\router\index.ts
  */
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
@@ -39,7 +39,7 @@ export const routes: RouteRecordRaw[] = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(process.env.BASE_URL),
+  history: createWebHashHistory(),
   routes
 })
 

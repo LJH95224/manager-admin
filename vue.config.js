@@ -3,7 +3,7 @@
  * @Description: vue 配置
  * @Autor: Alfred
  * @Date: 2021-05-18 14:43:46
- * @LastEditTime: 2021-05-20 09:59:41
+ * @LastEditTime: 2021-05-20 10:10:26
  * @FilePath: \manager-admin\vue.config.js
  */
 const path = require('path')
@@ -13,7 +13,7 @@ function resolve (dir) {
 }
 
 module.exports = {
-  publicPath: '/manager-admin/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/manager-admin/' : '/',
   outputDir: 'dist',
   assetsDir: 'static',
   productionSourceMap: false,

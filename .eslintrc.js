@@ -1,3 +1,10 @@
+/*
+ * @Description:
+ * @Autor: Alfred
+ * @Date: 2021-05-18 15:12:21
+ * @LastEditTime: 2021-05-20 09:57:09
+ * @FilePath: \manager-admin\.eslintrc.js
+ */
 module.exports = {
   root: true,
   env: {
@@ -13,7 +20,8 @@ module.exports = {
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    '@typescript-eslint/no-var-requires': 0
   },
   overrides: [
     {

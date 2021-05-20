@@ -35,7 +35,7 @@ export default defineComponent({
   components: {
     SidebarItem
   },
-  setup () {
+  setup() {
     const activeMenu = computed(() => {
       const route = useRoute()
       const { meta, path } = route

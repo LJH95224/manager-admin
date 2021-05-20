@@ -2,17 +2,17 @@
  * @Description: menuItem的子项
  * @Autor: Alfred
  * @Date: 2021-05-18 15:15:00
- * @LastEditTime: 2021-05-20 15:28:15
+ * @LastEditTime: 2021-05-20 15:16:45
  * @FilePath: \manager-admin\src\layout\components\Sidebar\SidebarItem.vue
 -->
 <template>
   <template v-if="!item.meta.hidden">
     <template v-if='!alwaysShowRootMenu && theOnlyOneChild && !theOnlyOneChild.children'>
-      <SidebarLink :to='resolvePath(theOnlyOneChild.path)'>
+      <sidebar-link :to='resolvePath(theOnlyOneChild.path)'>
         <el-menu-item :index='resolvePath(theOnlyOneChild.path)'>
           <menu-item :icon="theOnlyOneChild.meta?.icon" :title='theOnlyOneChild.meta?.title' />
         </el-menu-item>
-      </SidebarLink>
+      </sidebar-link>
     </template>
     <el-submenu v-else :index="resolvePath(item.path)" popper-append-to-body>
       <template #title>
@@ -30,7 +30,7 @@
   </template>
 </template>
 
-<script>
+<script >
 import path from 'path'
 import { defineComponent, computed } from 'vue'
 import { isExternal } from '@/utils/validate'

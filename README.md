@@ -25,5 +25,9 @@ npm run test:unit
 npm run lint
 ```
 
+### The online preview address
+
+> https://ljh95224.github.io/manager-admin
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

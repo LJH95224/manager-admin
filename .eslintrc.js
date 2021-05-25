@@ -2,7 +2,7 @@
  * @Description:
  * @Autor: Alfred
  * @Date: 2021-05-18 15:12:21
- * @LastEditTime: 2021-05-20 14:28:09
+ * @LastEditTime: 2021-05-25 15:45:20
  * @FilePath: \manager-admin\.eslintrc.js
  */
 module.exports = {
@@ -19,6 +19,7 @@ module.exports = {
     ecmaVersion: 2020
   },
   rules: {
+    "@typescript-eslint/no-explicit-any": ["off"],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     '@typescript-eslint/no-var-requires': 0,

@@ -2,7 +2,7 @@
  * @Description: 标签视图组件
  * @Autor: Alfred
  * @Date: 2021-05-18 09:01:04
- * @LastEditTime: 2021-05-26 16:56:58
+ * @LastEditTime: 2021-05-30 14:07:55
  * @FilePath: \manager-admin\src\layout\components\TagsView\index.vue
 -->
 <template>
@@ -14,7 +14,7 @@
       :to="{path: tag.path, query: tag.query, fullPath: tag.fullPath}"
       tag='span'
       class="tags-view-item">
-      {{ tag.title.title }}
+      {{ tag.meta.title }}
       <span class="el-icon-close"></span>
     </router-link>
   </scroll-pane>

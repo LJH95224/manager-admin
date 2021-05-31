@@ -2,7 +2,7 @@
  * @Description:
  * @Autor: Alfred
  * @Date: 2021-05-18 15:12:21
- * @LastEditTime: 2021-05-25 15:45:20
+ * @LastEditTime: 2021-05-31 16:42:14
  * @FilePath: \manager-admin\.eslintrc.js
  */
 module.exports = {
@@ -150,10 +150,10 @@ module.exports = {
     }],
     'no-unreachable': 2,
     'no-unsafe-finally': 2,
-    'no-unused-vars': [2, {
-      'vars': 'all',
-      'args': 'none'
-    }],
+    // 'no-unused-vars': [2, {
+    //   'vars': 'all',
+    //   'args': 'none'
+    // }],
     'no-useless-call': 2,
     'no-useless-computed-key': 2,
     'no-useless-constructor': 2,

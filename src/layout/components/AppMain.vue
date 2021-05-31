@@ -2,17 +2,17 @@
  * @Description: 主视图
  * @Author: Alfred
  * @Date: 2021-05-17 21:47:46
- * @LastEditTime: 2021-05-25 16:08:15
+ * @LastEditTime: 2021-05-31 14:50:03
  * @FilePath: \manager-admin\src\layout\components\AppMain.vue
 -->
 <template>
   <router-view v-slot="{ Component }">
-    <keep-alive v-if="$route.meta.keepAlive">
+    <keep-alive v-if="!$route.meta.noCache">
       <component :is="Component" >
         <!-- <p>缓存页面</p> -->
       </component>
     </keep-alive>
-    <component :is="Component" v-if="!$route.meta.keepAlive">
+    <component :is="Component" v-if="!!$route.meta.noCache">
       <!-- <p>没有缓存的页面</p> -->
     </component>
   </router-view>

@@ -2,7 +2,7 @@
  * @Description: 面包屑组件
  * @Autor: Alfred
  * @Date: 2021-05-20 13:54:54
- * @LastEditTime: 2021-06-01 14:42:11
+ * @LastEditTime: 2021-06-01 17:08:42
  * @FilePath: \manager-admin\src\components\Breadcrumb\index.vue
 -->
 <template>
@@ -28,6 +28,7 @@ export default defineComponent({
     const route = useRoute()
 
     const getBreadcrumb = () => {
+      console.log(route)
       let matched = route.matched.filter((item) => item.meta && item.meta.title && !item.meta.breadCrumbShow)
 
       const first = matched[0]
@@ -62,7 +63,7 @@ export default defineComponent({
     // TODO：跳转页面，会跳转到父级路由
 
     getBreadcrumb()
-    watch(route, getBreadcrumb)
+    watch(() => route.path, getBreadcrumb)
 
     return { breadcrumbsList, handleLink }
   }

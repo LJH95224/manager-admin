@@ -2,7 +2,7 @@
  * @Description: router 路由配置文件
  * @Autor: Alfred
  * @Date: 2021-05-18 15:12:21
- * @LastEditTime: 2021-06-01 14:47:47
+ * @LastEditTime: 2021-06-01 16:38:01
  * @FilePath: \manager-admin\src\router\index.ts
  */
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
@@ -33,7 +33,7 @@ export const routes: RouteRecordRaw[] = [
       {
         path: '404',
         name: 'notFound',
-        meta: { title: '404', noCache: true },
+        meta: { title: '404', noCache: false },
         component: () => import('@/views/error-page/404.vue')
       }
     ]
@@ -47,13 +47,13 @@ export const routes: RouteRecordRaw[] = [
       {
         path: 'list',
         name: 'userList',
-        meta: { title: '用户列表', noCache: true },
+        meta: { title: '用户列表', noCache: false },
         component: () => import('@/views/About.vue')
       },
       {
         path: 'Info',
         name: 'userInfo',
-        meta: { title: '用户信息', noCache: true },
+        meta: { title: '用户信息', noCache: false },
         component: () => import('@/views/About.vue')
       }
     ]

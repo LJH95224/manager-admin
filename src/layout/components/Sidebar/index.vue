@@ -2,7 +2,7 @@
  * @Description: 左侧菜单组件
  * @Autor: Alfred
  * @Date: 2021-05-18 15:15:00
- * @LastEditTime: 2021-06-01 16:10:44
+ * @LastEditTime: 2021-06-01 16:11:49
  * @FilePath: \manager-admin\src\layout\components\Sidebar\index.vue
 -->
 <template>
@@ -42,8 +42,10 @@ export default defineComponent({
     const activeMenu = computed(() => {
       const route = useRoute()
       const { meta, path } = route
-      if (meta.activeMenu) {
-        return meta.activeMenu
+      if (meta !== null || meta !== undefined) {
+        if (meta.activeMenu) {
+          return meta.activeMenu
+        }
       }
       return path
     })

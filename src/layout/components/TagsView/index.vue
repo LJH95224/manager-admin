@@ -2,23 +2,22 @@
  * @Description: 标签视图组件
  * @Autor: Alfred
  * @Date: 2021-05-18 09:01:04
- * @LastEditTime: 2021-05-31 17:26:49
+ * @LastEditTime: 2021-06-01 11:18:59
  * @FilePath: \manager-admin\src\layout\components\TagsView\index.vue
 -->
 <template>
   <div id="tags-view-container" class="tags-view-container">
-    <scroll-pane class="tags-view-scroll">
+    <scroll-pane ref="scrollPaneRef" @scroll="handleScroll" class="tags-view-wrapper">
       <router-link
         v-for="tag in visitedViews"
         ref='tag'
         :key='tag.path'
-        :class="isActive(tag) ? 'active' : ''"
+        :active-class="isActive(tag) ? 'active' : ''"
         :to="{path: tag.path, query: tag.query, fullPath: tag.fullPath}"
-        tag='span'
         @click.middle="!isAffix(tag) ? closeSelectedTag(tag) : ''"
         @contextmenu.prevent="openMenu(tag, $event)"
         class="tags-view-item">
-        {{ tag.meta?.title }}
+        <span class="active-circle" v-show="isActive(tag)"/>{{ tag.meta?.title }}
         <span
           v-if="!isAffix(tag)"
           class="el-icon-close"
@@ -57,7 +56,6 @@ export default defineComponent({
     const instance = getCurrentInstance()
     const currentRoute = useRoute()
     const scrollPaneRef = ref(null)
-    const { ctx } = instance as any
 
     const toLastView = (visitedViews: visitedViewsTypes[], view: visitedViewsTypes) => {
       const latestView = visitedViews.slice(-1)[0]
@@ -125,16 +123,17 @@ export default defineComponent({
         toLastView(store.state.tagViews.visitedViews, view)
       },
       openMenu: (tag: visitedViewsTypes, e: MouseEvent) => {
-        const menuMinWidth = 105
-        const offsetLeft = ctx.$el.getBoundingClientRect().left // container margin left
-        const offsetWidth = ctx.$el.offsetWidth // container width
-        const maxLeft = offsetWidth - menuMinWidth // left boundary
-        const left = e.clientX - offsetLeft + 15 // 15: margin right
-        if (left > maxLeft) {
-          state.left = maxLeft
-        } else {
-          state.left = left
-        }
+        // const menuMinWidth = 105
+        // const offsetLeft = ctx.$el.getBoundingClientRect().left // container margin left
+        // const offsetWidth = ctx.$el.offsetWidth // container width
+        // const maxLeft = offsetWidth - menuMinWidth // left boundary
+        // const left = e.clientX - offsetLeft + 15 // 15: margin right
+        // if (left > maxLeft) {
+        //   state.left = maxLeft
+        // } else {
+        //   state.left = left
+        // }
+        state.left = e.clientX
         state.top = e.clientY
         state.visible = true
         state.selectedTag = tag
@@ -187,10 +186,13 @@ export default defineComponent({
 
     const addTags = () => {
       if (currentRoute.name) {
-        console.log(currentRoute.name, 'currentRoute.namecurrentRoute.namecurrentRoute.namecurrentRoute.namecurrentRoute.namecurrentRoute.namecurrentRoute.namecurrentRoute.name')
         store.dispatch(TagsActionTypes.ACTION_ADD_VIEW, currentRoute)
       }
       return false
+    }
+
+    const addDefault = () => {
+      // store.dispatch(TagsActionTypes.ACTION_ADD_VIEW, 'Home')
     }
 
     const moveToCurrentTag = () => {
@@ -225,6 +227,7 @@ export default defineComponent({
     })
 
     onBeforeMount(() => {
+      addDefault()
       initTags()
       addTags()
     })
@@ -241,6 +244,15 @@ export default defineComponent({
 <style lang="scss" scoped>
 .tags-view-wrapper {
   .tags-view-item {
+    display: inline-block;
+    .active-circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin-right: 8px;
+      display: inline-block;
+    }
     .el-icon-close {
       width: 16px;
       height: 16px;
@@ -251,7 +263,6 @@ export default defineComponent({
       transform-origin: 100% 50%;
 
       &:before {
-        transform: scale(0.6);
         display: inline-block;
         vertical-align: -3px;
       }
@@ -270,7 +281,6 @@ export default defineComponent({
   width: 100%;
   background: #fff;
   border-bottom: 1px solid #eee;
-
   .tags-view-wrapper {
     .tags-view-item {
       display: inline-block;
@@ -278,11 +288,11 @@ export default defineComponent({
       cursor: pointer;
       height: 26px;
       line-height: 25px;
-   border: 1px solid rgba(124,141,181,.3);
-border-radius: 4px;
+      border: 1px solid rgba(124,141,181,.3);
+      border-radius: 1px;
       color: #495060;
       background: #fff;
-      padding: 0 8px;
+      padding: 0 10px;
       font-size: 12px;
       margin-left: 5px;
       margin-top: 4px;

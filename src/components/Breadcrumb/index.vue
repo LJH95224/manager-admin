@@ -2,7 +2,7 @@
  * @Description: 面包屑组件
  * @Autor: Alfred
  * @Date: 2021-05-20 13:54:54
- * @LastEditTime: 2021-06-01 17:08:42
+ * @LastEditTime: 2021-06-01 17:15:25
  * @FilePath: \manager-admin\src\components\Breadcrumb\index.vue
 -->
 <template>
@@ -28,7 +28,6 @@ export default defineComponent({
     const route = useRoute()
 
     const getBreadcrumb = () => {
-      console.log(route)
       let matched = route.matched.filter((item) => item.meta && item.meta.title && !item.meta.breadCrumbShow)
 
       const first = matched[0]

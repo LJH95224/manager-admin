@@ -1,8 +1,9 @@
+/* eslint-disable */
 /*
  * @Description:
  * @Autor: Alfred
  * @Date: 2021-05-31 15:13:31
- * @LastEditTime: 2021-05-31 16:42:04
+ * @LastEditTime: 2021-06-08 15:29:09
  * @FilePath: \manager-admin\src\store\modules\permission\action.ts
  */
 import { ActionTree, ActionContext } from 'vuex'

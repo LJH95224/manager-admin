@@ -12,6 +12,7 @@ dist
 public/threeModel
 dist-ssr
 *.local
+.eslintcache
 
 # Editor directories and files
 .vscode/*

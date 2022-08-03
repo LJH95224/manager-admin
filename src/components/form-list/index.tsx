@@ -22,6 +22,7 @@ interface selectIn extends baseIn {
   value: string | Array<string | number>
   placeholder: string
   itemList: Array<any>
+  // eslint-disable-next-line @typescript-eslint/ban-types
   changeFun: Function
 }
 

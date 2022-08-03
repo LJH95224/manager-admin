@@ -504,7 +504,7 @@ function TimeFormate(time) {
   const day = time.getDate()
   let hour = time.getHours()
   let min = time.getMinutes()
-  if (min % 5 != 0) {
+  if (min % 5 !== 0) {
     //eslint-disable-line
     if (min % 5 <= 3) {
       min = min - (min % 5)
@@ -590,7 +590,7 @@ function radarTimeFormate(time) {
   let day = time.getDate()
   let hour = time.getHours()
   let min = time.getMinutes()
-  if (min % 5 != 0) {
+  if (min % 5 !== 0) {
     //eslint-disable-line
     if (min % 5 <= 3) {
       min = min - (min % 5)
@@ -625,7 +625,7 @@ function radarTimeFormate(time) {
 /********* X轴定义域 *****************************************/
 // 格式化X轴时间
 function localTimeFormate(time) {
-  if (time.getHours() == 0) {
+  if (time.getHours() === 0) {
     //eslint-disable-line
     const month = time.getMonth() + 1 // 月份是从0开始的
     const day = time.getDate()

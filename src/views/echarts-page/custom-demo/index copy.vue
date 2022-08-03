@@ -23,7 +23,6 @@ const initEcharts = () => {
     const chartDom = document.getElementById('main')
   }
   const myChart = echarts.init(container.value)
-  let option
 
   const categoryData = []
   const errorData = []
@@ -49,7 +48,7 @@ const initEcharts = () => {
   }
   const groupLen = 5
   console.log('errorData', errorData)
-  option = {
+  const option = {
     tooltip: {
       trigger: 'axis',
       axisPointer: {

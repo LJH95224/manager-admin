@@ -101,7 +101,7 @@ module.exports = {
     // 强制函数块最多允许的的语句数量20
     'max-statements': ['warn', 100],
     // 强制回调函数最大嵌套深度
-    'max-nested-callbacks': ['warn', 3],
+    'max-nested-callbacks': ['warn', 4],
     // 强制函数定义中最多允许的参数数量
     'max-params': ['warn', 10],
     // 强制每一行中所允许的最大语句数量

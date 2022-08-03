@@ -23,7 +23,6 @@ const initEcharts = () => {
     const chartDom = document.getElementById('main')
   }
   const myChart = echarts.init(container.value)
-  let option
 
   const categoryData = []
   let errorData = []
@@ -116,7 +115,7 @@ const initEcharts = () => {
    * 三个为一组，以此类推，groupLen 表示总共有多少组
    */
   const colorArr = ['#2351BE', '#EA769E', '#D48265']
-  option = {
+  const option = {
     title: {
       text: 'Error bar chart'
     },
